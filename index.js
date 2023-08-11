@@ -6,7 +6,7 @@ const log = require('log-to-file');
 
 app.get('/', (req, res) => {
     const ipAddress = requestIP.getClientIp(req);
-    log(ipAddress);
+    // log(ipAddress);
     console.log(ipAddress);
     // res.send(ipAddresses);
     res.send('Hello World!')
