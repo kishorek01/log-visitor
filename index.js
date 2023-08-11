@@ -1,13 +1,10 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const requestIP = require('request-ip');
-const log = require('log-to-file');
 
 app.get('/', (req, res) => {
-    const ipAddress = requestIP.getClientIp(req);
     // log(ipAddress);
-    console.log(req.query.id+ " :: " + ipAddress);
+    console.log(req.query.id + " :: " + req.query.ip);
     // res.send(ipAddresses);
     res.send('Hello World!')
 })
